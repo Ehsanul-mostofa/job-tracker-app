@@ -1,0 +1,16 @@
+<h2>Ehsanul’s Job Tracker</h2>
+
+<app-job-form></app-job-form>
+
+<div class="list-wrapper">
+  <div class="job-card" *ngFor="let job of jobs">
+    <div>
+      <strong>{{ job.company }}</strong>
+      <div class="role">
+        {{ job.role }} | {{ job.appliedDate | date:'MMMM d, y' }}
+      </div>
+    </div>
+
+    <a [routerLink]="['/job', job.id]" class="view-btn">View</a>
+  </div>
+</div>

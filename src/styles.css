@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1.6fr 3fr 1.4fr;
+  gap: 16px;
+  align-items: center;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+input, select {
+  height: 48px;
+  padding: 0 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+button {
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  background: #6366f1;
+  color: #fff;
+}
+
+button:disabled {
+  background: #c7c7c7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1000px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  justify-self: flex-start;
+  margin-top: 16px;
+}
+
+
+@media (max-width: 1000px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    justify-self: stretch;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+form {
+  padding: 24px;
+}
+
+
+
+
+
+
+

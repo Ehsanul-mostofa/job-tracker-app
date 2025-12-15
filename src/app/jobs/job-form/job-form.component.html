@@ -1,0 +1,42 @@
+<div class="form-wrapper">
+
+  <form (ngSubmit)="submit()">
+
+    <input placeholder="Company"
+           [(ngModel)]="job.company"
+           name="company"
+           required>
+
+    <input placeholder="Role"
+           [(ngModel)]="job.role"
+           name="role"
+           required>
+
+    <input type="date"
+           [(ngModel)]="job.appliedDate"
+           name="appliedDate"
+           required>
+
+    <input placeholder="Job URL"
+           [(ngModel)]="job.jobLink"
+           name="jobLink"
+           required>
+
+    <select [(ngModel)]="job.status" name="status">
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Offer</option>
+      <option>Rejected</option>
+    </select>
+
+    <!-- Button MUST be inside form -->
+    <button
+      class="submit-btn"
+      type="submit"
+      [disabled]="!job.company || !job.role || !job.appliedDate || !job.jobLink">
+      Add Job
+    </button>
+
+  </form>
+
+</div>

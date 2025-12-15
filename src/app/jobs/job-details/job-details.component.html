@@ -1,0 +1,32 @@
+<div class="details-card" *ngIf="job">
+
+  <h3>{{ job.company }}</h3>
+
+  <div class="details-row">
+    <span class="details-label">Role</span>
+    <span class="details-value">{{ job.role }}</span>
+  </div>
+
+  <div class="details-row">
+    <span class="details-label">Status</span>
+    <span class="details-value">{{ job.status }}</span>
+  </div>
+
+  <div class="details-row">
+    <span class="details-label">Applied</span>
+    <span class="details-value">
+      {{ job.appliedDate | date:'MMMM d, y' }}
+    </span>
+  </div>
+
+  <div class="details-row">
+    <span class="details-label">Job Link</span>
+    <a [href]="job.jobLink" target="_blank">Open Posting</a>
+  </div>
+
+  <div class="details-actions">
+    <button (click)="router.navigate(['/'])">Back</button>
+    <button (click)="delete()">Delete</button>
+  </div>
+
+</div>
