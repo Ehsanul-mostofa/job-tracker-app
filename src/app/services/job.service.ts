@@ -33,6 +33,11 @@ export class JobService {
     localStorage.setItem('jobs', JSON.stringify(updated));
   }
 
+  getAllJobs(): Job[] {
+  return this.jobs$.value;
+  }
+
+
   private load(): Job[] {
     return JSON.parse(localStorage.getItem('jobs') || '[]');
   }

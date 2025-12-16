@@ -14,3 +14,10 @@
     <a [routerLink]="['/job', job.id]" class="view-btn">View</a>
   </div>
 </div>
+
+<!-- Download button BELOW the list -->
+<div class="download-wrapper">
+  <button class="download-btn" (click)="downloadExcel()">
+    Download List
+  </button>
+</div>
