@@ -17,7 +17,11 @@ job: Job = {
   status: 'Applied',
   appliedDate: new Date().toISOString().split('T')[0],
   notes: '',
-  jobLink: ''
+  jobLink: '',
+  next: function (updated: any): unknown {
+    throw new Error('Function not implemented.');
+  },
+  value: undefined
 };
 
 

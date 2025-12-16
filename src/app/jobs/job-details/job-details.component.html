@@ -1,3 +1,4 @@
+<!-- Job Details Card -->
 <div class="details-card" *ngIf="job">
 
   <h3>{{ job.company }}</h3>
@@ -21,12 +22,31 @@
 
   <div class="details-row">
     <span class="details-label">Job Link</span>
-    <a [href]="job.jobLink" target="_blank">Open Posting</a>
+    <a [href]="safeJobLink" target="_blank" rel="noopener">
+      Open Posting
+    </a>
   </div>
 
   <div class="details-actions">
-    <button (click)="router.navigate(['/'])">Back</button>
-    <button (click)="delete()">Delete</button>
+    <button type="button" (click)="goBack()">Back</button>
+    <button type="button" class="danger" (click)="openDeleteConfirm()">
+      Delete
+    </button>
   </div>
 
+</div>
+
+<!-- Confirm Delete Popup -->
+<div class="overlay" *ngIf="showConfirm">
+  <div class="confirm-box">
+    <h4>Delete Job?</h4>
+    <p>Job details will be deleted permanently.</p>
+
+    <div class="confirm-actions">
+      <button type="button" (click)="cancelDelete()">Cancel</button>
+      <button type="button" class="danger" (click)="confirmDelete()">
+        Delete
+      </button>
+    </div>
+  </div>
 </div>
